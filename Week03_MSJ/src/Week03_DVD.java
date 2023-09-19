@@ -42,7 +42,6 @@ public class Week03_DVD {
 	c.stop();
 	c.slow();
 	
-
 	}
 
 }
