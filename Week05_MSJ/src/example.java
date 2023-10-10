@@ -11,6 +11,8 @@ class Container<T> {
 		this.t=t;
 	}
 }
+
+
 public class example {
 
 	public static void main(String[] args) {
