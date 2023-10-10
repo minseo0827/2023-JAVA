@@ -2,6 +2,7 @@ package Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//GUI로의연계.,...?
 public class BookArrayListTest {
 
     public static void main(String[] args) {
