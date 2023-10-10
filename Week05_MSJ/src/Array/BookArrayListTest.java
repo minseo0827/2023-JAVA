@@ -38,5 +38,7 @@ public class BookArrayListTest {
         bookArrayList.showAllBook();
 
         scanner.close();
+        
+       
     }
 }
