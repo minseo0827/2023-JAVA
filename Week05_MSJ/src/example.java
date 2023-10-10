@@ -1,4 +1,4 @@
-package Generic;
+//package Generic;
 
 class Container<T> {
 	private T t;
