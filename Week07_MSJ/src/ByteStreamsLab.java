@@ -20,6 +20,7 @@ public class ByteStreamsLab {
 		
 		try(InputStream inputStream = new FileInputStream(inputFileName);
 				//경로중요.... 경로알고 src아래가아니라 src랑 동등하게들어가야함
+				//왜나는...git 파일명 week07애있는거지
 				OutputStream outputStream =new FileOutputStream(outputFileName)) {
 			int c;
 			while ((c=inputStream.read())!=-1) {
