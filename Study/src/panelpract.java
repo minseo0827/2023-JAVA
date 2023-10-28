@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.plaf.TextUI;
 
+
 class Mypanel extends JFrame {
 	public Mypanel() { //클래스생성젤윗줄만빼고괄호다들어감!!!!!!!
 		setSize(1000, 700);
