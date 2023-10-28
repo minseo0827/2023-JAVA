@@ -15,6 +15,7 @@ class Mypanel extends JFrame {
 		p1.setBackground(Color.yellow);
 		p2.setBackground(Color.pink);
 		
+		
 		setLayout(new FlowLayout()); //버튼생성전에 항상 레이아웃을 만들어줘야함
 		//음..이건 옆으로나란히가네
 		
