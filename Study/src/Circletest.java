@@ -13,7 +13,7 @@ class Pizza extends Circle0 {
 	
 	public Pizza(String name, int radius) { //입력받은걸 네임에넣겟다~인거지. 
 		//파이썬으로따지면 def print(start): 같은... 그 받은 start는 그냥 값 받는 매개변수인거고. 변수의이름자체에는변화가없다 네임 래디오스 그대로.
-		super(radius); //이래도제대로들어가나..?
+		super(radius); //이래도a제대로들어가나..?
 		this.name=name; //그냥내가편한...디스.ㅁ=ㅁ; 이래도된다
 		//자바에서 생성자의 매개변수 순서가 일치하지 않아도 괜찮
 		//매개변수 이름과 순서가 맞지 않는 경우 알아서 찾으려고 시도
