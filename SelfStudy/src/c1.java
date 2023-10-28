@@ -18,6 +18,7 @@ class Repair extends JPanel implements ItemListener {
 	JLabel label;
 	
 	
+	
 	public Repair() {
 		super();
 		// 체크 박스 생성
