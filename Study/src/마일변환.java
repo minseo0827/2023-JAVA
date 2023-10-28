@@ -16,7 +16,7 @@ class miletras extends JFrame {
 	JLabel label2;
 	JTextField textField1;
 	JTextField textField2;
-	String mile;
+	
 	
 	public miletras() {
 		panel=new JPanel();
@@ -33,11 +33,12 @@ class miletras extends JFrame {
 	}
 	
 	
-	class mylisten implements ActionListener {
+	class mylisten implements ActionListener { //뭐. 액션리스너만구현할수잇으면된다..
 		public void actionPerformed(ActionEvent e) {
-			mile=textField1.getText(); //근데얘도문자열만가져오는데.. float포기!
-			//mile=(String)((int)mile*1.609344);
-			textField2.setText(mile+"km"); //settext는 항상 문자열만을반환해주는듯...정수를 반환할거면 +"" 해서 암거나써줘야한다 혹은비워놓더라도..
+			String mileText=textField1.getText(); //근데얘도문자열만가져오는데.. float포기!
+			double mile= Double.parseDouble(mileText); //뭔가이런게...잇나봐...
+			double km=mile*1.60934;
+			textField2.setText(km+"km"); //settext는 항상 문자열만을반환해주는듯...정수를 반환할거면 +"" 해서 암거나써줘야한다 혹은비워놓더라도..
 		}
 	}
 }
