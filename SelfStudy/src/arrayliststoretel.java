@@ -44,6 +44,9 @@ class addressbook extends JFrame {
 	JLabel nameLabel; JLabel telLabel; JLabel addresslaJLabel;
 	JTextField nameTextField; JTextField telField; JTextArea addressArea;
 	JButton storeButton; JButton searchButton; JButton exitButton;
+	
+	//ArrayList<person> mylist=new ArrayList<person>(); //최초크기를정해놓지않고그때그때추가할거면어레이리스트의형태여야한다
+	//mylist.add(new person(a,a,a));이거고. 텍스트필드에서 갖고와야하니까 getText쓰는거고. 그대로집어넣고객체생성하면되는거고.
 	//ArrayList<person> infoList1; //펄슨객체만받는 어레이리스트생성, 이름은 인포리스트1.
 	//어레이리스트는완벽하게선언해도되는듯?. 어쨌든.
 	ArrayList<person> infoList1=new ArrayList<>();
@@ -81,9 +84,9 @@ class addressbook extends JFrame {
 			String name=nameTextField.getText(); //일단가져와서담아
 			//있는지찾어..어케찾는데.
 			for (person p: infoList1) {
-				if(p.getname().equals(name)) {
+				if(p.getname().equals(name)) { //객체에저장된피의이름을갖고온게 받은네임과같다면
 					telField.setText(p.gettel()); //어레이리스트에들어있는 객체p중에 같은게있다면 개네를 가져온다.. 이걸위한 get메소드엿군아
-					addressArea.setText(p.getaddress());
+					addressArea.setText(p.getaddress()); //텍스트필드에띄워주는거니까 tf.setText("")인거지
 				}
 			}	
 			}
