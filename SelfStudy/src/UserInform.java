@@ -8,6 +8,7 @@ public class UserInform {
 	public static void main(String[] args) throws IOException {
 		int num2;
 		String search;
+		
 		String num, name, tel, email;
 		//Scanner scanner=null; //넌왜필요한거지?
 		PrintWriter in=new PrintWriter(new FileWriter("user.txt"));
