@@ -31,6 +31,7 @@ public class UserInform {
 			if(num2==1) //종료를받는다면종료하는거고.
 				break;
 		}
+		
 		in.close();
 		
 		//입력이 끝났으면 이제 사용자로부터 번호입력받고, 그 번호에 해당하는 전화번호출력
