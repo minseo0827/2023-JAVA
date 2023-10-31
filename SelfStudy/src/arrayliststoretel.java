@@ -92,7 +92,7 @@ class addressbook extends JFrame {
 			}
 		});
 		
-		exitButton.addActionListener(e->{System.exit(0);});
+		exitButton.addActionListener(e->System.exit(0));
 		
 		setSize(500, 400);
 		setVisible(true);

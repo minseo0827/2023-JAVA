@@ -19,7 +19,7 @@ public int getBookId() {return BookId;}
 
 public void setBookId(int BookId) {this.BookId=BookId;}
 
-public String toString() {
+public String toString() { //애가지정되어야한다고..
 	return BookName+"도서의 아이디는 "+BookId+"입니다."; //와..애가없으면 내가만든showallbook메소드가주솟값을갖고온다고...신기허네몰랏당
 	}
 }
