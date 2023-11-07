@@ -33,6 +33,7 @@ public class CarGame extends JFrame {
 	}
 
 	
+	
 	public CarGame() {
 		setTitle("CarRace");
 		setSize(600, 200);
