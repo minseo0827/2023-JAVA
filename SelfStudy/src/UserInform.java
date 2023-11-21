@@ -24,7 +24,7 @@ public class UserInform {
 			System.out.print("입력 끝났으면 1, 계속하려면 0");
 			num2=s.nextInt(); //얘는정수를받으니까 넥스트인트고.
 			
-			 String userEntry = num + ", " + name + ", " + tel + ", " + email;
+			 String userEntry = num + ", " + name + ", " + tel + ", " + email; //문자열을또만들어서저장하기
 	            userEntries.add(userEntry);
 			
 			in.print(num+", "+ name+", "+ tel+", "+ email+""); //이런식으로 파일에 쓰고
