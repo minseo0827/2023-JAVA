@@ -28,6 +28,7 @@ class MyFrame extends JFrame {
 		rs = stmt.executeQuery("SELECT * FROM books");
 		//모든 데이터를 가져옴
 		
+	
 		setLayout(new GridLayout(0, 2));
 		add(new JLabel("ID", JLabel.CENTER));
 		add(id = new JTextField());
