@@ -47,6 +47,7 @@ class MyFrame extends JFrame {
 		
 		add(new JLabel("출판사 검색", JLabel.CENTER));
 		add(search = new JTextField());
+		
 
 		previousButton = new JButton("Previous");
 		previousButton.addActionListener(new ActionListener() {
