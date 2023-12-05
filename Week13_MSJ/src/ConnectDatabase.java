@@ -36,6 +36,40 @@ public class ConnectDatabase {
 		try {
 			
 			/*
+			 * String sql = new StringBuilder() .append("UPDATE boards SET ")
+			 * .append("btitle=?, ") .append("bcontent=?, ") .append("bfilename=?, ")
+			 * .append("bfiledata=? ") .append("WHERE bno=?") .toString();
+			 * 
+			 * PreparedStatement psmt=con.prepareStatement(sql); psmt.setString(1, "눈사람");
+			 * psmt.setString(2, "눈으로 만든 사람"); psmt.setString(3, "snowman.jpg");
+			 * 
+			 * try { psmt.setBlob(4, new FileInputStream("snowman.jpg")); } catch
+			 * (FileNotFoundException e) { System.out.print("파일을 찾을 수 없습니다.");
+			 * e.printStackTrace(); }
+			 * 
+			 * psmt.setInt(5, 1);
+			 */
+			 
+			String sql="DELETE FROM boards WHERE bwriter=?";
+			PreparedStatement psmt=con.prepareStatement(sql); 
+			psmt.setString(1, "winter");
+			
+			int rows=psmt.executeUpdate();
+			System.out.print("삭제된 행 수: " + rows + "\n");
+			
+			psmt.close();
+			
+			
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				if(con!=null) {
+					try {
+						con.close();
+					} catch (SQLException e) {}
+				
+		
+			/*
 			 * String sql= "" +
 			 * " INSERT INTO users (userid, username, userpassword, userage, useremail) " +
 			 * " VALUES (?, ?, ?, ?, ?)";
@@ -60,9 +94,9 @@ public class ConnectDatabase {
 					
 				}*/
 			
-			String sql= "" +
+			/*String sql= "" +
 					" INSERT INTO boards (btitle, bcontent, bwriter, bdate, bfilename, bfiledata) " +
-								" VALUES (?, ?, ?, now(), ?, ?)";
+								" VALUES (?, ?, ?, now(), ?, ?)";*/
 						
 						/*PreparedStatement psmt=con.prepareStatement(sql, new String[] {"bno"});
 						psmt.setString(1, "눈 오는 날");
@@ -74,15 +108,15 @@ public class ConnectDatabase {
 			psmt.setString(1, "봄의 정원");
 			psmt.setString(2, "정원의 꽃이 예쁘네요");
 			psmt.setString(3, "spring");
-			psmt.setString(4, "spring.jpg");*/
+			psmt.setString(4, "spring.jpg");
 			
 			PreparedStatement psmt=con.prepareStatement(sql, new String[] {"bno"});
 			psmt.setString(1, "크리스마스");
 			psmt.setString(2, "메리 크리스마스~");
 			psmt.setString(3, "winter");
-			psmt.setString(4, "chrismas.jpg");
+			psmt.setString(4, "chrismas.jpg");*/
 						
-						try {
+						/*try {
 							psmt.setBlob(5, new FileInputStream("snow.jpg"));
 						} catch (FileNotFoundException e) {
 							System.out.print("파일을 찾을 수 없습니다.");
@@ -110,7 +144,9 @@ public class ConnectDatabase {
 			if(con!=null) {
 				try {
 					con.close();
-				} catch (SQLException e) {}		
+				} catch (SQLException e) {}*/	
+			 
+			 
 			}
 		
 		}
