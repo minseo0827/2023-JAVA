@@ -41,8 +41,8 @@ public class ConnectDatabase1 {
 			 * " INSERT INTO users (userid, username, userpassword, userage, useremail) " +
 			 * " VALUES (?, ?, ?, ?, ?)";
 			 * 
-			 * PreparedStatement psmt=con.prepareStatement(sql); psmt.setString(1,
-			 * "winter"); psmt.setString(2, "한겨울"); psmt.setString(3, "12345");
+			 * PreparedStatement psmt=con.prepareStatement(sql); 
+			 * psmt.setString(1, "winter"); psmt.setString(2, "한겨울"); psmt.setString(3, "12345");
 			 * psmt.setInt(4, 25); psmt.setString(5, "winter@mycompany.com");
 			 *
 			 *
