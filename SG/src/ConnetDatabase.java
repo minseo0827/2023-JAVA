@@ -2,7 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class COnnetDatabase {
+public class ConnetDatabase {
 
 	public static Connection makeConnection() {
 		String url="jdbc:mysql://localhost:3306/book_db";
@@ -28,5 +28,6 @@ public class COnnetDatabase {
 	public static void main(String arg[]) throws SQLException {
 		Connection con=makeConnection();
 		con.close();
+		
 	}
 }

@@ -1,27 +1,33 @@
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.Color;
-import java.awt.Font;
 
 public class CarGame extends JFrame {
+
+    private static boolean[] carWins = {false, false, false, false, false};
+    private static boolean winnerDisplayed = false;
 
     class MyThread extends Thread {
         private JLabel label;
         private int x, y;
+        private String carFileName;
 
         public MyThread(String fname, int x, int y) {
             this.x = x;
             this.y = y;
+            this.carFileName = fname;
             label = new JLabel();
-            label.setIcon(new ImageIcon(fname));
+            label.setIcon(new ImageIcon(fname + ".gif"));
             label.setBounds(x, y, 100, 100);
             add(label);
         }
 
         public void run() {
-            for (int i = 0; i < 200; i++) {
+            while (x < 485) {
                 x += 10 * Math.random();
+                if (x > 485) {
+                    x = 485;
+                }
                 label.setBounds(x, y, 100, 100);
                 repaint();
                 try {
@@ -31,56 +37,59 @@ public class CarGame extends JFrame {
                 }
             }
 
-            if (x >= getWidth() - 100) {
-                showWinner(label);
+            label.setBounds(x, y, 100, 100);
+            repaint();
+
+            if (!carWins[y / 50] && !winnerDisplayed) {
+                carWins[y / 50] = true;
+                displayWinsMessage(carFileName);
+                winnerDisplayed = true;
             }
         }
     }
 
-    private JLabel finishLine;
-    private JLabel winnerLabel;
-
     public CarGame() {
         setTitle("CarRace");
-        setSize(800, 200);
-
+        setSize(800, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
 
-        // Add a background label with an image
-        JLabel background = new JLabel();
-        background.setIcon(new ImageIcon("background.jpg")); // Replace "background.jpg" with your image file
-        background.setBounds(0, 0, getWidth(), getHeight());
-        add(background);
+        // 배경 이미지(bg.jpg) 추가
+        //JLabel bgLabel = new JLabel();
+        //bgLabel.setIcon(new ImageIcon("bg.png"));
+        //bgLabel.setBounds(0, 0, 800, 400);
+        //add(bgLabel);
+        getContentPane().setBackground(java.awt.Color.GRAY);
 
-        // Create and add finish line to the right side
-        finishLine = new JLabel("FINISH");
-        finishLine.setFont(new Font("Arial", Font.BOLD, 20));
-        finishLine.setBounds(getWidth() - 100, 0, 100, getHeight());
+        // 다섯 대의 차량 생성 및 스레드 시작
+        (new MyThread("car1", 100, 0)).start();
+        (new MyThread("car2", 100, 50)).start();
+        (new MyThread("car3", 100, 100)).start();
+        (new MyThread("car4", 100, 150)).start();
+        (new MyThread("car5", 100, 200)).start();
+
+        JLabel finishLine = new JLabel();
+        finishLine.setBounds(550, 0, 2, 400);
+        finishLine.setOpaque(true);
+        finishLine.setBackground(java.awt.Color.BLACK);
         add(finishLine);
 
-        // Create and add winner label
-        winnerLabel = new JLabel("");
-        winnerLabel.setFont(new Font("Arial", Font.BOLD, 20));
-        winnerLabel.setBounds(getWidth() / 2 - 100, getHeight() / 2 - 50, 200, 100);
-        add(winnerLabel);
-
-        // Create and start threads for cars with adjusted initial positions
-        (new MyThread("car1.gif", 50, 20)).start();
-        (new MyThread("car2.gif", 50, 70)).start();
-        (new MyThread("car3.gif", 50, 120)).start();
-        (new MyThread("car4.gif", 50, 170)).start();
-        (new MyThread("car5.gif", 50, 220)).start();
+        // race.gif 추가
+        JLabel raceLabel = new JLabel();
+        raceLabel.setIcon(new ImageIcon("race.gif"));
+        raceLabel.setBounds(600, 0, 150, 400);
+        add(raceLabel);
 
         setVisible(true);
     }
 
-    private synchronized void showWinner(JLabel winner) {
-        if (winnerLabel.getText().isEmpty()) {
-            winnerLabel.setText(winner.getIcon() + " wins!");
-        }
+    private void displayWinsMessage(String carFileName) {
+        JLabel winsLabel = new JLabel(carFileName + "이 우승했습니다!");
+        winsLabel.setBounds(550, 300, 150, 100);
+        add(winsLabel);
+        repaint();
     }
-    
+
     public static void main(String[] args) {
         CarGame t = new CarGame();
     }

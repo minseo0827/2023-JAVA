@@ -138,6 +138,13 @@ public class BulletinBoard {
     }
 
     public void mainMenu() {
+    	System.out.println("===== 게시판 목록 ============");
+        System.out.printf("%-5s%-20s%-30s%-15s%-20s\n", "No", "Title", "Content", "Writer", "Date");
+        for (int i = 0; i < posts.size(); i++) {
+            Post post = posts.get(i);
+            System.out.printf("%-5d%-20s%-30s%-15s%-20s\n", post.getBno(), post.getTitle(), post.getContent(), post.getWriter(), post.getDate());
+        }
+        System.out.println("============================");
         System.out.println("메인 메뉴: 1. Create | 2. Read | 3. Delete | 4. Clear(초기화) | 5. Exit");
         System.out.print("메뉴 선택: ");
     }
