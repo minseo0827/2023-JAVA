@@ -1,8 +1,1 @@
-
-public class sampel {
-
-}
-
-
-
-
+//디비연동확인완료
