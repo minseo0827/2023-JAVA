@@ -54,9 +54,7 @@ public class Car extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
 
-       
-       
-
+     
        
         (new MyThread("car1", 100, 0)).start();
         (new MyThread("car2", 100, 50)).start();
@@ -73,7 +71,7 @@ public class Car extends JFrame {
       
         JLabel raceLabel = new JLabel();
         raceLabel.setIcon(new ImageIcon("race.gif"));
-        raceLabel.setBounds(600, 0, 150, 400);
+        raceLabel.setBounds(600, 0, 150, 100);
         add(raceLabel);
 
         setVisible(true);
